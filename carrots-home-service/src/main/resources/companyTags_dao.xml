@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dal>
+	<route>
+		<object name="com.ptteng.carrots.home.model.CompanyTags"
+			listenerClass="" strategyProperty="">
+			
+			
+			
+					<list name="getCompanyTagsIdsByCompanyId"
+				sqlitem="select id from company_tags where company_id =?"
+				keyProperty="companyId" valueProperty="id" keyColumn="company_id" />
+						
+			
+						
+			
+					<list name="getCompanyTagsIdsAll" sqlitem="select id from company_tags where 1 = 1 order by create_at desc"
+				keyProperty="version" valueProperty="id" keyColumn="version" />
+			
+			<dbStrategy name="mutiDS"
+                clasz="com.gemantic.dal.route.strategy.DefaultStrategy">  <pattern value="[0-9]$" group="carrots_home" />
+            </dbStrategy>
+			
+		</object>
+	</route>
+</dal>

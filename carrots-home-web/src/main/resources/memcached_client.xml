@@ -1,0 +1,69 @@
+<!-- <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<cache>
+		<datasource
+			name="default"
+			timeout="300"
+			port="11211"
+			server="cache.common.carrots"
+			maxActive="18"
+			maxIdle="18"
+			maxWait="-1"
+		/>
+	</cache>
+	<regions> -->
+
+						<!--<region name="com.ptteng.common.aiyanwo.model.Order" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+						<!--<region name="com.ptteng.common.aiyanwo.model.Oprate" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+						<!--<region name="com.ptteng.common.aiyanwo.model.User" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+										<!---->
+				                    <!---->
+                                        <!---->
+			<!--<region name="getOrderIdsByMobile" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+                            <!---->
+                		<!---->
+		<!---->
+							<!---->
+				                    <!---->
+                                        <!---->
+			<!--<region name="getOprateIdsByType" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+                            <!---->
+                		<!---->
+		<!---->
+							<!---->
+				                    <!---->
+                                        <!---->
+			<!--<region name="getUserIdsByUserType" listenerClass="com.gemantic.dal.cache.listener.DefaultListenerImpl" strategyClass="com.gemantic.memcached.route.strategy.DefaultStrategy">-->
+			<!--<keyPattern value="[0-9]$" datasource ="default"/>-->
+		<!--</region>-->
+		<!---->
+                            <!---->
+                		<!---->
+		<!---->
+					<!---->
+			<!---->
+			<!---->
+			<!---->
+		<!---->
+		<!---->
+
+
+
+<!-- 	</regions> -->
+<!-- </root> -->
+

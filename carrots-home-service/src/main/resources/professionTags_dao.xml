@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dal>
+	<route>
+		<object name="com.ptteng.carrots.home.model.ProfessionTags"
+			listenerClass="" strategyProperty="">
+			
+			
+			
+					<list name="getProfessionTagsIdsByCompanyId"
+				sqlitem="select id from profession_tags where company_id = ?"
+				keyProperty="companyId" valueProperty="id" keyColumn="company_id" />
+					<list name="getProfessionTagsIdsByProfessionId"
+				sqlitem="select id from profession_tags where profession_id = ?"
+				keyProperty="professionId" valueProperty="id" keyColumn="profession_id" />
+						
+			
+						
+			
+					<list name="getProfessionTagsIdsAll" sqlitem="select id from profession_tags where 1 = 1 order by create_at desc"
+				keyProperty="version" valueProperty="id" keyColumn="version" />
+			
+			<dbStrategy name="mutiDS"
+                clasz="com.gemantic.dal.route.strategy.DefaultStrategy">  <pattern value="[0-9]$" group="carrots_home" />
+            </dbStrategy>
+			
+		</object>
+	</route>
+</dal>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:sca="http://www.springframework.org/schema/sca"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+            http://www.springframework.org/schema/sca http://www.springframework.org/schema/sca/spring-sca.xsd">
+
+	<context:component-scan base-package="com.ptteng.carrots.home" />
+
+	
+		<sca:service name="companyService"
+		type="com.ptteng.carrots.home.service.CompanyService" target="companyService" />
+		
+	
+		<sca:service name="companyIndustryService"
+		type="com.ptteng.carrots.home.service.CompanyIndustryService" target="companyIndustryService" />
+		
+	
+		<sca:service name="companyTagsService"
+		type="com.ptteng.carrots.home.service.CompanyTagsService" target="companyTagsService" />
+		
+	
+		<sca:service name="productService"
+		type="com.ptteng.carrots.home.service.ProductService" target="productService" />
+		
+	
+		<sca:service name="professionService"
+		type="com.ptteng.carrots.home.service.ProfessionService" target="professionService" />
+		
+	
+		<sca:service name="professionTagsService"
+		type="com.ptteng.carrots.home.service.ProfessionTagsService" target="professionTagsService" />
+	
+		
+		<sca:service name="managerService"
+				 type="com.ptteng.carrots.home.service.ManagerService" target="managerService"/>
+
+	<sca:service name="moduleService"
+				 type="com.ptteng.carrots.home.service.ModuleService" target="moduleService"/>
+
+
+	<sca:service name="roleService"
+				 type="com.ptteng.carrots.home.service.RoleService" target="roleService"/>
+
+
+	<sca:service name="roleModuleService"
+				 type="com.ptteng.carrots.home.service.RoleModuleService" target="roleModuleService"/>
+
+
+	<sca:service name="articleService"
+				 type="com.ptteng.carrots.home.service.ArticleService" target="articleService"/>
+		
+	
+		
+	
+	 
+	
+	
+
+
+	
+
+
+
+	
+		
+	<bean id="companyService"
+		class="com.ptteng.carrots.home.service.impl.CompanyServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="companyIndustryService"
+		class="com.ptteng.carrots.home.service.impl.CompanyIndustryServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="companyTagsService"
+		class="com.ptteng.carrots.home.service.impl.CompanyTagsServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="productService"
+		class="com.ptteng.carrots.home.service.impl.ProductServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="professionService"
+		class="com.ptteng.carrots.home.service.impl.ProfessionServiceImpl" parent="baseDaoService">
+
+	</bean>
+		
+	<bean id="professionTagsService"
+		class="com.ptteng.carrots.home.service.impl.ProfessionTagsServiceImpl" parent="baseDaoService">
+
+	</bean>
+	
+	
+	<bean id="articleService"
+		  class="com.ptteng.carrots.home.service.impl.ArticleServiceImpl" parent="baseDaoService">
+
+	</bean>
+
+	<bean id="managerService"
+		  class="com.ptteng.carrots.home.service.impl.ManagerServiceImpl" parent="baseDaoService">
+
+	</bean>
+
+	<bean id="moduleService"
+		  class="com.ptteng.carrots.home.service.impl.ModuleServiceImpl" parent="baseDaoService">
+
+	</bean>
+
+	<bean id="roleService"
+		  class="com.ptteng.carrots.home.service.impl.RoleServiceImpl" parent="baseDaoService">
+
+	</bean>
+
+	<bean id="roleModuleService"
+		  class="com.ptteng.carrots.home.service.impl.RoleModuleServiceImpl" parent="baseDaoService">
+
+	</bean>
+
+		
+
+<bean id="dao" class="com.gemantic.dal.dao.impl.CompositeDaoImpl" />
+
+	<bean id="baseDaoService"
+		class="com.ptteng.common.dao.BaseDaoServiceImpl">
+		<property name="dao" ref="dao" />
+	</bean>
+
+
+
+
+
+
+	<!-- performance -->
+	<aop:aspectj-autoproxy />
+	<bean id="aroundLoggingTime" class="com.gemantic.common.stat.aop.time.AroundTimeConsume" />
+	<aop:config>
+		<aop:aspect ref="aroundLoggingTime">
+			<aop:pointcut id="publicServiceMethod"
+				expression="execution(* com.gemantic..service.*.*(..)) " />
+			<aop:around method="around" pointcut-ref="publicServiceMethod" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>
+

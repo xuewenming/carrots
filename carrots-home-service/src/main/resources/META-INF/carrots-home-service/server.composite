@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://www.osoa.org/xmlns/sca/1.0" xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.0"
+    xmlns:scallop="http://scallop/xmlns/sca/1.0"
+    targetNamespace="http://CarrotsHomeComponent" xmlns:sample="http://CarrotsHomeComponent" name="CarrotsHomeComponent">
+
+
+  <component name="CarrotsHomeComponent">
+    <implementation.spring location="META-INF/carrots-home-service/applicationContext-server.xml" />
+  </component>
+  
+	  <service name="companyService" promote="CarrotsHomeComponent/companyService">
+    <interface.java interface="com.ptteng.carrots.home.service.CompanyService"/> 
+    <scallop:binding.rmi host="localhost" port="10528" serviceName="CompanyRMIService"/>     
+  </service>
+	  <service name="companyIndustryService" promote="CarrotsHomeComponent/companyIndustryService">
+    <interface.java interface="com.ptteng.carrots.home.service.CompanyIndustryService"/> 
+    <scallop:binding.rmi host="localhost" port="10528" serviceName="CompanyIndustryRMIService"/>     
+  </service>
+	  <service name="companyTagsService" promote="CarrotsHomeComponent/companyTagsService">
+    <interface.java interface="com.ptteng.carrots.home.service.CompanyTagsService"/> 
+    <scallop:binding.rmi host="localhost" port="10528" serviceName="CompanyTagsRMIService"/>     
+  </service>
+	  <service name="productService" promote="CarrotsHomeComponent/productService">
+    <interface.java interface="com.ptteng.carrots.home.service.ProductService"/> 
+    <scallop:binding.rmi host="localhost" port="10528" serviceName="ProductRMIService"/>     
+  </service>
+	  <service name="professionService" promote="CarrotsHomeComponent/professionService">
+    <interface.java interface="com.ptteng.carrots.home.service.ProfessionService"/> 
+    <scallop:binding.rmi host="localhost" port="10528" serviceName="ProfessionRMIService"/>     
+  </service>
+	  <service name="professionTagsService" promote="CarrotsHomeComponent/professionTagsService">
+    <interface.java interface="com.ptteng.carrots.home.service.ProfessionTagsService"/> 
+    <scallop:binding.rmi host="localhost" port="10528" serviceName="ProfessionTagsRMIService"/>     
+  </service>
+	
+	
+	
+	
+	        <service name="managerService" promote="CarrotsHomeComponent/managerService">
+              <interface.java interface="com.ptteng.carrots.home.service.ManagerService"/>
+              <scallop:binding.rmi host="localhost" port="10528" serviceName="ManagerRMIService"/>
+            </service>
+
+             <service name="moduleService" promote="CarrotsHomeComponent/moduleService">
+                      <interface.java interface="com.ptteng.carrots.home.service.ModuleService"/>
+                      <scallop:binding.rmi host="localhost" port="10528" serviceName="ModuleRMIService"/>
+                    </service>
+
+             <service name="roleService" promote="CarrotsHomeComponent/roleService">
+                      <interface.java interface="com.ptteng.carrots.home.service.RoleService"/>
+                      <scallop:binding.rmi host="localhost" port="10528" serviceName="RoleRMIService"/>
+             </service>
+
+              <service name="roleModuleService" promote="CarrotsHomeComponent/roleModuleService">
+              <interface.java interface="com.ptteng.carrots.home.service.RoleModuleService"/>
+              <scallop:binding.rmi host="localhost" port="10528" serviceName="RoleModuleRMIService"/>
+              </service>
+
+
+    	<service name="articleService" promote="CarrotsHomeComponent/articleService">
+            <interface.java interface="com.ptteng.carrots.home.service.ArticleService"/>
+            <scallop:binding.rmi host="localhost" port="10528" serviceName="ArticleRMIService"/>
+          </service>
+
+	
+  
+	
+
+
+</composite>
+
